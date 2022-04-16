@@ -1,0 +1,14 @@
+.userData {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.userData__title {
+	font-size: 1.1em;
+}
+
+.userData__total {
+	font-size: 1em;
+}

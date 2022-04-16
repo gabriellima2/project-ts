@@ -1,0 +1,11 @@
+.button {
+	border: none;
+	background: none;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.button__icon {
+	color: #fff;
+	font-size: 1.4em;
+}
