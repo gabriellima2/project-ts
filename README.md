@@ -5,7 +5,7 @@ Utilizei a [Api do Github](https://docs.github.com/pt/rest) para pegar as inform
 
 Passei algumas dificuldades com a tipagem de Eventos e Hooks, mas nada que uma bela pesquisada na internet não resolvesse.
 
-<h3>Pretendo fazer as rotas para mostrar os seguidores, repos etc.</h3>
+Fiz um modal que mostra informações como seguidores, repos etc.
 
 Aproveitei também e utilizei bibliotecas/tecnologias que queria conhecer.
 
