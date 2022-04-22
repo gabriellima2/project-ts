@@ -3,7 +3,7 @@
 Projeto para colocar em prática o que venho estudando durante a semana sobre Typescript, mas dessa vez com React.
 Utilizei a [Api do Github](https://docs.github.com/pt/rest) para pegar as informações.
 
-Passei algumas dificuldades com a tipagem de Eventos e Hooks, mas nada que uma bela pesquisada na internet não resolve-se.
+Passei algumas dificuldades com a tipagem de Eventos e Hooks, mas nada que uma bela pesquisada na internet não resolvesse.
 
 <h3>Pretendo fazer as rotas para mostrar os seguidores, repos etc.</h3>
 
