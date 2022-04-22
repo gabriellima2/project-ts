@@ -11,7 +11,7 @@ import { InputChange, KeyDown } from "./types";
 
 import { UserContext } from "../../context/User";
 import defaultStyle from "../../style/default";
-import api from "../../services/api";
+import request from "../../utils/request";
 
 function SearchBar() {
 	const [value, setValue] = useState("");
@@ -29,9 +29,11 @@ function SearchBar() {
 		if (!value) return;
 
 		try {
-			const response: AxiosResponse = await api.get(`/users/${value}`);
+			const response = await request(value);
 
-			searchResult(response.data);
+			if (response) {
+				searchResult(response);
+			}
 		} catch (err) {
 			console.error(err);
 		}

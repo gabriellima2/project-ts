@@ -1,0 +1,52 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container__modal {
+	width: 50%;
+	max-width: 800px;
+	height: fit-content;
+	max-height: 300px;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	border-radius: 5px;
+	background-color: rgba(0, 40, 77, 0.774);
+
+	position: relative;
+}
+
+@media screen and (max-width: 800px) {
+	.container__modal {
+		width: 95%;
+	}
+}
+
+.modal__button {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+
+	background: none;
+	border: none;
+
+	padding: 5px;
+
+	color: #fff;
+	font-size: 1.5em;
+
+	cursor: pointer;
+}

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { Avatar, Box } from "@mui/material";
 
-import Data from "./Data";
+import Repos from "./Repos";
+import Follows from "./Follows";
 
 import { UserContext } from "../../context/User";
+import Data from "./Data";
 
 function UserInformation() {
 	const { user } = useContext(UserContext);
@@ -11,11 +13,13 @@ function UserInformation() {
 	return (
 		<>
 			<Avatar
-				src={user.avatar_url}
-				alt={`Foto de ${user?.login}`}
+				src={user.description?.avatar_url || ""}
+				alt={`Foto de ${user.description?.login || ""}`}
 				sx={{ height: 75, width: 75 }}
 			/>
-			<p style={{ fontSize: "1.1em" }}>{user?.login || "Faça uma busca!"}</p>
+			<p style={{ fontSize: "1.1em" }}>
+				{user.description?.login || "Faça uma busca!"}
+			</p>
 
 			<Box
 				sx={{
@@ -25,9 +29,21 @@ function UserInformation() {
 					gap: "40px"
 				}}
 			>
-				<Data title="Followers" total={user?.followers || 0} />
-				<Data title="Repos" total={user?.public_repos || 0} />
-				<Data title="Following" total={user?.following || 0} />
+				<Data
+					title="Following"
+					total={user.description?.following || 0}
+					content={{ follows: user?.following }}
+				/>
+				<Data
+					title="Repos"
+					total={user.description?.public_repos || 0}
+					content={{ repos: user?.repos }}
+				/>
+				<Data
+					title="Followers"
+					total={user.description?.followers || 0}
+					content={{ follows: user?.followers }}
+				/>
 			</Box>
 		</>
 	);
