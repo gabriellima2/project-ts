@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 
-import { IDescription, IRepos, Follow, IUser } from "../../context/interfaces";
+import { IDescription, IRepo, IFollow, IUser } from "../../context/interfaces";
 import api from "../../services/api";
 
 async function request(value: string) {
@@ -9,15 +9,15 @@ async function request(value: string) {
 			`/users/${value}`
 		);
 
-		const reposResponse: AxiosResponse<[IRepos]> = await api.get(
+		const reposResponse: AxiosResponse<[IRepo]> = await api.get(
 			`/users/${value}/repos`
 		);
 
-		const followingResponse: AxiosResponse<[Follow]> = await api.get(
+		const followingResponse: AxiosResponse<[IFollow]> = await api.get(
 			`/users/${value}/following`
 		);
 
-		const followersResponse: AxiosResponse<[Follow]> = await api.get(
+		const followersResponse: AxiosResponse<[IFollow]> = await api.get(
 			`/users/${value}/followers`
 		);
 

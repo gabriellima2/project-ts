@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { Avatar, Box } from "@mui/material";
 
-import Repos from "./Repos";
-import Follows from "./Follows";
+import Data from "./Data";
 
 import { UserContext } from "../../context/User";
-import Data from "./Data";
 
 function UserInformation() {
 	const { user } = useContext(UserContext);

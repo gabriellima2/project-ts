@@ -1,15 +1,17 @@
 import { MouseEvent } from "react";
-import { IFollows, IRepos } from "../../context/interfaces";
+
 import Follows from "../UserInformation/Follows";
 import Repos from "../UserInformation/Repos";
+
+import { IFollow, IRepo } from "../../context/interfaces";
 
 import style from "./style.module.css";
 
 type ModalProps = {
 	type: string;
 	content: {
-		repos?: IRepos[];
-		follows?: IFollows[];
+		repos?: IRepo[];
+		follows?: IFollow[];
 	};
 	handleModalVisibility: (type: string) => void;
 	isVisible: boolean;
@@ -21,17 +23,22 @@ function Modal(props: ModalProps) {
 	return (
 		<div
 			className={style.container}
-			onClick={(e: MouseEvent) => {
-				e.stopPropagation();
+			onClick={() => {
 				props.handleModalVisibility("close");
 			}}
 		>
-			<div className={style.container__modal}>
-				{props.type === "Repos" ? (
-					<Repos content={props.content.repos} />
-				) : (
-					<Follows content={props.content.follows} />
-				)}
+			<div
+				className={style.container__modal}
+				onClick={(e: MouseEvent) => e.stopPropagation()}
+			>
+				<div className={style.modal__content}>
+					{props.type === "Repos" ? (
+						<Repos content={props.content.repos} />
+					) : (
+						<Follows content={props.content.follows} />
+					)}
+				</div>
+
 				<button
 					className={style.modal__button}
 					onClick={() => props.handleModalVisibility("close")}

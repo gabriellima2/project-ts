@@ -20,11 +20,8 @@
 	height: fit-content;
 	max-height: 300px;
 
-	overflow-y: auto;
-	overflow-x: hidden;
-
 	border-radius: 5px;
-	background-color: rgba(0, 40, 77, 0.774);
+	background-color: rgba(0, 40, 77);
 
 	position: relative;
 }
@@ -35,9 +32,31 @@
 	}
 }
 
+.modal__content {
+	max-width: inherit;
+	max-height: inherit;
+
+	padding: 10px;
+
+	overflow-y: auto;
+}
+
+.modal__content::-webkit-scrollbar {
+	width: 5px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+	background-color: #fff;
+	border-radius: 10px;
+}
+
 .modal__button {
 	position: absolute;
-	right: -5px;
+	right: 0px;
 	top: -5px;
 
 	background: none;

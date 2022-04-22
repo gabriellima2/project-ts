@@ -9,23 +9,23 @@ export interface IDescription extends BasicUserInformation {
 	following: number;
 }
 
-export interface IRepos {
+export interface IRepo {
 	id: number;
 	name: string;
 	description: string;
 	html_url: string;
 }
 
-export interface IFollows extends BasicUserInformation {
+export interface IFollow extends BasicUserInformation {
 	html_url: string;
 	id: number;
 }
 
 export interface IUser {
 	description: IDescription;
-	repos: IRepos[];
-	following: IFollows[];
-	followers: IFollows[];
+	repos: IRepo[];
+	following: IFollow[];
+	followers: IFollow[];
 }
 
 export interface IContext {

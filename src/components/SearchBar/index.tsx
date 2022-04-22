@@ -1,7 +1,5 @@
 import { useState, useContext } from "react";
 
-import { AxiosResponse } from "axios";
-
 import Box from "@mui/material/Box";
 
 import Input from "./Input";

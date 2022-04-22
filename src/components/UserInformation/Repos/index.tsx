@@ -1,9 +1,9 @@
-import { IRepos } from "../../../context/interfaces";
+import { IRepo } from "../../../context/interfaces";
 
 import style from "./style.module.css";
 
 type ReposProps = {
-	content: IRepos[] | undefined;
+	content: IRepo[] | undefined;
 };
 
 function Repos({ content }: ReposProps) {

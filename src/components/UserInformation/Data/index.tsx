@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { IFollows, IRepos } from "../../../context/interfaces";
 
 import Modal from "../../Modal";
+
+import { IFollow, IRepo } from "../../../context/interfaces";
 
 import style from "./style.module.css";
 
@@ -9,8 +10,8 @@ type Props = {
 	title: string;
 	total: number;
 	content: {
-		repos?: IRepos[];
-		follows?: IFollows[];
+		repos?: IRepo[];
+		follows?: IFollow[];
 	};
 };
 

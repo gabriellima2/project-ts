@@ -1,10 +1,10 @@
 import { Avatar } from "@mui/material";
-import { IFollows } from "../../../context/interfaces";
+import { IFollow } from "../../../context/interfaces";
 
 import style from "./style.module.css";
 
 type FollowsProps = {
-	content: IFollows[] | undefined;
+	content: IFollow[] | undefined;
 };
 
 function Follows({ content }: FollowsProps) {
@@ -13,7 +13,7 @@ function Follows({ content }: FollowsProps) {
 	return (
 		<ul className={style.container}>
 			{content.map((follow) => (
-				<li className={style.item}>
+				<li className={style.item} key={follow.id}>
 					<Avatar
 						src={follow.avatar_url}
 						alt={`Foto de ${follow.login}`}
